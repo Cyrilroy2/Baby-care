@@ -1,0 +1,151 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+	<!-- Contact Us -->
+
+
+
+    <!-- <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="section-title">
+                        <h2><span>Payment   </span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row"> -->
+
+
+
+                <!-- Contact Form -->
+
+
+
+                <!-- <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInUp">
+                    <form class="form" method="post" action="addpay">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="s_id" hidden placeholder="" value="{{result.id}}" required="required">
+                        </div>
+                       
+                        <div class="form-group">
+                            
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="basicpay" value="{{result.basicpay}}" readonly required="required">
+                        </div>
+                       
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="name" placeholder="card Name" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="cvv" placeholder="CVV" maxlength="4" required="required">
+                        </div>
+                       
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="c_number" placeholder="Card Number" maxlength="16" required="required">
+                        </div>
+                        <div class="form-group">
+                            <p>Date </p>
+                            <i class="fa fa-user"></i>
+                            <input type="date" name="date" placeholder="" required="required">
+                        </div>
+                       
+                       
+                        
+                      
+                        <div class="form-group">	
+                            <button type="submit" class="button primary"><i class="fa fa-send"></i>Submit</button>
+                        </div>
+                    </form>
+                </div> -->
+
+
+
+
+
+                <!--/ Contact Form -->
+                <!-- Google Map -->
+                
+               
+               
+               
+               
+                <!-- <br><br>
+
+
+
+
+
+
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp">
+                    <div class="contact-map">
+                        <div class="single-client">
+                            <img src="../static/images/1.jpg" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div> --> 
+
+
+
+                <!--/ End Google Map -->
+
+
+                
+            <!-- </div>
+        </div>
+    </section> -->
+
+
+
+    <!--/ End Clients Us -->
+
+
+
+
+
+
+
+
+
+    <body>
+        <form action="/dsuccess/{{result.id}}" method="POST">
+            {% csrf_token %}
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_SROSnyInFv81S4"
+            data-amount=50000
+            data-currency="INR"
+            data-order_id="{{payment.id}}"
+            data-buttontext="Pay with Razorpay"
+            data-name="django payment"
+            data-description="this is test payment"
+            data-image="https://example.com/your_logo.jpg"
+            data-prefill.name="Gaurav Kumar"
+            data-prefill.email="django@test.com"
+            data-theme.color="#F37254"
+        ></script>
+        <input type="hidden" custom="Hidden Element" name="hidden">
+        </form>
+        </body>
+        
+
+
+
+
+
+        
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+    
+        <br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+{% include 'footer.html' %}
+
+{% endblock %}
